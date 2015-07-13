@@ -1,5 +1,6 @@
 package com.dwbook.phonebook;
 
+import com.dwbook.phonebook.resources.ContactResource;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
@@ -20,6 +21,8 @@ public class App extends Application<PhonebookConfiguration>
         for(int i = 0; i < configuration.getMessageRepetitions(); i++) {
             System.out.println(configuration.getMessage());
         }
+
+        environment.jersey().register(new ContactResource());
     }
 
     public static void main( String[] args ) throws Exception {
