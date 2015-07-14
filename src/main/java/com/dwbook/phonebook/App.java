@@ -1,10 +1,13 @@
 package com.dwbook.phonebook;
 
+import com.dwbook.phonebook.dao.ContactDao;
 import com.dwbook.phonebook.resources.ContactResource;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
+import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.skife.jdbi.v2.DBI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,12 +20,10 @@ public class App extends Application<PhonebookConfiguration>
 
     @Override
     public void run(PhonebookConfiguration configuration, Environment environment) throws Exception {
-        LOGGER.info("Method App#run() called;");
-        for(int i = 0; i < configuration.getMessageRepetitions(); i++) {
-            System.out.println(configuration.getMessage());
-        }
+        final DBIFactory factory = new DBIFactory();
+        final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
 
-        environment.jersey().register(new ContactResource());
+        environment.jersey().register(new ContactResource(jdbi));
     }
 
     public static void main( String[] args ) throws Exception {

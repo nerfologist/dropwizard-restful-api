@@ -1,2 +1,6 @@
 message: This is a message assigned in configuration.yaml
 messageRepetitions: 3
+database:
+  driverClass: org.postgresql.Driver
+  user: phonebook_app
+  url: 'jdbc:postgresql://localhost/phonebook'
