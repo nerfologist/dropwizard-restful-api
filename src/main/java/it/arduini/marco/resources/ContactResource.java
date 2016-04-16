@@ -1,12 +1,13 @@
-package com.dwbook.phonebook.resources;
+package it.arduini.marco.resources;
 
-import com.dwbook.phonebook.dao.ContactDao;
-import com.dwbook.phonebook.representation.Contact;
+import it.arduini.marco.dao.ContactDao;
+import it.arduini.marco.representation.Contact;
 import org.skife.jdbi.v2.DBI;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/contacts")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -19,9 +20,15 @@ public class ContactResource {
     }
 
     @GET
+    public Response indexContacts() {
+        List<Contact> contacts = contactDao.getContacts();
+
+        return Response.ok(contacts).build();
+    }
+
+    @GET
     @Path("/{id}")
-    public Response getContact(@PathParam("id") int id) {
-        // get contact identified by id
+    public Response showContact(@PathParam("id") int id) {
         Contact contact = contactDao.getContactById(id);
 
         return Response.ok(contact).build();
@@ -36,6 +43,7 @@ public class ContactResource {
     }
 
     @DELETE
+    @Path("/{id}")
     public Response deleteContact(@PathParam("id") int id) {
         // delete contact
 
@@ -47,7 +55,7 @@ public class ContactResource {
     public Response updateContact(@PathParam("id") int id,
                                   Contact contact) {
         // update contact
-        //return Response.ok().build();
+        // return Response.ok().build();
         return Response.status(Response.Status.OK).entity(contact).build();
     }
 }

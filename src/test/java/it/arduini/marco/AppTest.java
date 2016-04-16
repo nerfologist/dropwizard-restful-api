@@ -1,4 +1,4 @@
-package com.dwbook.phonebook;
+package it.arduini.marco;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -1,6 +1,6 @@
-package com.dwbook.phonebook.dao.mappers;
+package it.arduini.marco.dao.mappers;
 
-import com.dwbook.phonebook.representation.Contact;
+import it.arduini.marco.representation.Contact;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 

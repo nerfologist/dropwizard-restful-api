@@ -1,4 +1,4 @@
-package com.dwbook.phonebook.representation;
+package it.arduini.marco.representation;
 
 public class Contact {
     private final int id;

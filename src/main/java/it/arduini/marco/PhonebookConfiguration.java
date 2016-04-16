@@ -1,4 +1,4 @@
-package com.dwbook.phonebook;
+package it.arduini.marco;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;

@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>name.arduini.marco</groupId>
-  <artifactId>dwbook-phonebook</artifactId>
-  <name>dwbook-phonebook</name>
+  <artifactId>dropwizard-restful-api</artifactId>
+  <name>dropwizard-restful-api</name>
   <version>1.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <build>
@@ -20,7 +20,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.dwbook.phonebook.App</mainClass>
+                  <mainClass>it.arduini.marco.App</mainClass>
                 </transformer>
                 <transformer />
               </transformers>

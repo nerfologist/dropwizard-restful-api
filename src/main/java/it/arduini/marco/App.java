@@ -1,9 +1,7 @@
-package com.dwbook.phonebook;
+package it.arduini.marco;
 
-import com.dwbook.phonebook.dao.ContactDao;
-import com.dwbook.phonebook.resources.ContactResource;
+import it.arduini.marco.resources.ContactResource;
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
